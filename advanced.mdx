@@ -1,0 +1,155 @@
+---
+title: Advanced Features
+description: Explore advanced watermarking techniques and customization options
+---
+
+## Advanced Watermarking Techniques
+
+Tracktag.me offers powerful customization options for professional users who need fine-tuned control over their audio watermarking process.
+
+<Columns cols={2}>
+  <Card title="Custom Algorithms" icon="cpu" href="#custom-algorithms">
+    Learn about advanced watermarking algorithms and their applications.
+  </Card>
+  <Card title="Metadata Embedding" icon="tag" href="#metadata-embedding">
+    Embed rich metadata and track usage information.
+  </Card>
+</Columns>
+
+## Custom Algorithms
+
+Tracktag.me provides multiple watermarking algorithms optimized for different audio types and protection levels.
+
+<Tabs>
+  <Tab title="Spread Spectrum" icon="radio">
+    Uses spread spectrum techniques for robust, imperceptible watermarks. Ideal for music with complex frequency content.
+    
+    <CodeGroup tabs="Configuration,Example">
+      ````javascript
+      const options = {
+        algorithm: 'spread-spectrum',
+        strength: 'high',
+        frequencyRange: [1000, 8000]
+      };
+      ````
+      ````javascript
+      tracktag.process('classical.wav', 'output.wav', options);
+      ````
+    </CodeGroup>
+  </Tab>
+  <Tab title="Echo Hiding" icon="volume-2">
+    Embeds watermarks using subtle echo patterns. Effective for speech and vocal tracks.
+    
+    <CodeGroup tabs="Configuration,Example">
+      ````javascript
+      const options = {
+        algorithm: 'echo-hiding',
+        delay: 0.001,
+        decay: 0.3
+      };
+      ````
+      ````javascript
+      tracktag.process('speech.wav', 'output.wav', options);
+      ````
+    </CodeGroup>
+  </Tab>
+  <Tab title="Phase Coding" icon="activity">
+    Modifies phase relationships to encode watermark data. Suitable for high-fidelity audio.
+    
+    <CodeGroup tabs="Configuration,Example">
+      ````javascript
+      const options = {
+        algorithm: 'phase-coding',
+        precision: 'high',
+        segments: 1024
+      };
+      ````
+      ````javascript
+      tracktag.process('master.wav', 'output.wav', options);
+      ````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">Choose the algorithm based on your audio content type and desired protection level. Test different options to find the optimal balance between security and audio quality.</Callout>
+
+## Metadata Embedding
+
+Beyond basic identification, Tracktag.me allows embedding rich metadata that can include usage tracking and ownership information.
+
+<Steps>
+  <Step title="Define Metadata" icon="edit">
+    Create a metadata object with relevant information about your track.
+  </Step>
+  <Step title="Configure Embedding" icon="settings">
+    Set embedding parameters for the metadata.
+  </Step>
+  <Step title="Process and Verify" icon="check">
+    Apply the watermark and verify metadata extraction.
+  </Step>
+</Steps>
+
+<Expandable title="Metadata Structure" default-open="false">
+  Tracktag.me supports embedding structured metadata including:
+  
+  - Track title and composer information
+  - Creation date and modification timestamps
+  - Usage rights and licensing information
+  - Custom identifiers and reference numbers
+  
+  <CodeGroup tabs="JavaScript,Python">
+    ````javascript
+    const metadata = {
+      title: 'Epic Orchestral Score',
+      composer: 'Jane Smith',
+      created: '2024-01-15',
+      license: 'All Rights Reserved',
+      customId: 'LIB-001-456'
+    };
+    ````
+    ````python
+    metadata = {
+      'title': 'Epic Orchestral Score',
+      'composer': 'Jane Smith',
+      'created': '2024-01-15',
+      'license': 'All Rights Reserved',
+      'custom_id': 'LIB-001-456'
+    }
+    ````
+  </CodeGroup>
+</Expandable>
+
+## Performance Optimization
+
+For large-scale operations, Tracktag.me offers performance optimization features.
+
+<ExpandableGroup>
+  <Expandable title="Multi-threading" default-open="false">
+    Utilize multiple CPU cores for faster batch processing. Configure thread count based on your system's capabilities.
+  </Expandable>
+  <Expandable title="Memory Management" default-open="false">
+    Optimize memory usage for large audio files. Tracktag.me automatically manages memory allocation for optimal performance.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="alert">When processing very large files, ensure your system has sufficient RAM to avoid performance issues.</Callout>
+
+## Integration Options
+
+Tracktag.me supports integration with various production workflows and third-party tools.
+
+<Columns cols={3}>
+  <Card title="Command Line" icon="terminal" href="#cli-integration">
+    Use Tracktag.me in automated scripts and batch processes.
+  </Card>
+  <Card title="API Access" icon="code" href="#api-integration">
+    Integrate with web applications and services.
+  </Card>
+  <Card title="Plugin Support" icon="plug" href="#plugin-integration">
+    Connect with digital audio workstations and production software.
+  </Card>
+</Columns>
+
+<Update label="2024-10-05" description="Advanced Features Expansion" tags={["feature"]}>
+  Added new algorithm options and integration capabilities.
+</Update>

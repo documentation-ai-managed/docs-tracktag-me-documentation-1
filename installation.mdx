@@ -1,0 +1,110 @@
+---
+title: Installation
+description: Step-by-step guide to installing Tracktag.me on Mac and PC
+---
+
+## Installing Tracktag.me
+
+Getting Tracktag.me up and running on your system is straightforward. This guide covers installation for both Mac and Windows platforms, ensuring you can start protecting your audio content quickly.
+
+<Steps>
+  <Step title="Download the Software" icon="download">
+    Visit the Tracktag.me website and download the appropriate installer for your operating system. We offer versions for both Mac and Windows.
+    
+    <Callout kind="info">Make sure to download from the official Tracktag.me website to ensure you're getting the latest secure version.</Callout>
+  </Step>
+  <Step title="Run the Installer" icon="play">
+    Locate the downloaded file and double-click to start the installation process. Follow the on-screen prompts.
+    
+    <Tabs>
+      <Tab title="macOS" icon="apple">
+        On macOS, you may need to allow the installer to run by going to System Preferences > Security & Privacy.
+        
+        <CodeGroup tabs="Terminal Install,Manual Install">
+          ````bash
+          # Terminal installation (if available)
+          brew install tracktag
+          ````
+          ````bash
+          # Manual installation
+          # 1. Mount the .dmg file
+          # 2. Drag Tracktag.me to Applications folder
+          ````
+        </CodeGroup>
+      </Tab>
+      <Tab title="Windows" icon="monitor">
+        On Windows, you may see a User Account Control prompt. Click "Yes" to allow the installation to proceed.
+        
+        <CodeGroup tabs="PowerShell,Manual Install">
+          ````powershell
+          # PowerShell installation (if using package manager)
+          winget install Tracktag.AudioWatermark
+          ````
+          ````powershell
+          # Manual installation
+          # 1. Run the .exe installer as administrator
+          # 2. Follow the setup wizard
+          ````
+        </CodeGroup>
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Launch and Activate" icon="settings">
+    After installation completes, launch Tracktag.me from your applications menu. You'll be prompted to enter your license key for activation.
+    
+    <Expandable title="License Activation" default-open="false">
+      If you don't have a license key yet, you can start with a free trial. Visit our website to purchase a full license or start your evaluation period.
+    </Expandable>
+  </Step>
+  <Step title="Verify Installation" icon="check">
+    Once activated, open a sample audio file to ensure Tracktag.me is working correctly. The interface should load and display the audio waveform.
+  </Step>
+</Steps>
+
+## System Requirements
+
+Before installing, ensure your system meets these minimum requirements:
+
+| Component | macOS | Windows |
+|-----------|-------|---------|
+| OS Version | 10.15+ | 10+ |
+| RAM | 4GB | 4GB |
+| Storage | 500MB | 500MB |
+| Processor | Multi-core | Multi-core |
+
+<Callout kind="danger">Tracktag.me requires administrator privileges during installation. Make sure you have the necessary permissions on your system.</Callout>
+
+## Troubleshooting Installation
+
+If you encounter issues during installation:
+
+- **Permission Errors**: Try running the installer as administrator (Windows) or with sudo (macOS).
+- **Antivirus Blocking**: Temporarily disable antivirus software during installation, then re-enable it afterward.
+- **Disk Space**: Ensure you have at least 500MB of free space on your installation drive.
+
+<ExpandableGroup>
+  <Expandable title="Installation Fails on macOS" default-open="false">
+    If the installation fails on macOS, try these steps:
+    1. Check that you're downloading from the official website
+    2. Ensure your macOS version is 10.15 or later
+    3. Try installing in a different user account
+  </Expandable>
+  <Expandable title="Windows Installation Stuck" default-open="false">
+    For Windows installation issues:
+    1. Disable User Account Control temporarily
+    2. Run the installer in compatibility mode for Windows 8
+    3. Check for pending Windows updates
+  </Expandable>
+</ExpandableGroup>
+
+## Post-Installation Setup
+
+After successful installation:
+
+1. **Update Software**: Check for updates within the application to ensure you have the latest features and security patches.
+2. **Configure Preferences**: Set your default watermark settings and output preferences.
+3. **Test with Sample Audio**: Process a short audio clip to verify everything is working correctly.
+
+<Update label="2024-10-15" description="Installation Guide Update" tags={["improvement"]}>
+  Updated installation instructions for macOS Sonoma and Windows 11 compatibility.
+</Update>

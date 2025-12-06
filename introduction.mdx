@@ -1,0 +1,94 @@
+---
+title: Introduction
+description: Overview of Tracktag.me and its core capabilities for audio watermarking
+---
+
+## Getting Started with Tracktag.me
+
+Tracktag.me is a professional audio watermarking tool designed specifically for musicians, composers, and stock music libraries who need to protect their digital content online. This powerful software adds imperceptible audio watermarks to your tracks, making them traceable while preserving the original sound quality.
+
+<Columns cols={3}>
+  <Card title="Easy Setup" icon="zap" href="installation">
+    Get started quickly with our intuitive installation process for Mac and PC.
+  </Card>
+  <Card title="Professional Protection" icon="shield" href="usage">
+    Learn how to apply robust audio watermarks to safeguard your music.
+  </Card>
+  <Card title="Advanced Features" icon="settings" href="advanced">
+    Explore customization options and advanced watermarking techniques.
+  </Card>
+</Columns>
+
+## Why Choose Tracktag.me?
+
+In today's digital landscape, protecting original audio content is crucial. Tracktag.me offers a comprehensive solution that balances security with ease of use. Our tool is trusted by professional composers and music libraries worldwide for its reliability and effectiveness.
+
+<Tabs>
+  <Tab title="For Composers" icon="music">
+    As a composer, you need to ensure your original scores and recordings remain protected when distributed online. Tracktag.me provides the peace of mind you need to share your work confidently.
+    
+    <Steps>
+      <Step title="Prepare Your Track" icon="file">
+        Import your audio file into the Tracktag.me interface.
+      </Step>
+      <Step title="Select Watermark Type" icon="settings">
+        Choose from various watermark algorithms optimized for different audio types.
+      </Step>
+      <Step title="Apply and Export" icon="download">
+        Process the track and save the watermarked version.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="For Music Libraries" icon="folder">
+    Stock music libraries face unique challenges in tracking usage and preventing unauthorized distribution. Tracktag.me's batch processing capabilities make it ideal for large-scale operations.
+    
+    <CodeGroup tabs="Batch Processing,Individual Tracks">
+      ````javascript
+      // Batch processing example
+const watermark = require('tracktag');
+
+const tracks = ['track1.wav', 'track2.wav', 'track3.wav'];
+tracks.forEach(track => {
+  watermark.apply(track, 'library-id');
+});
+      ````
+      ````javascript
+      // Single track processing
+const watermark = require('tracktag');
+watermark.apply('my-track.wav', 'unique-id');
+      ````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Callout kind="info">Tracktag.me processes audio in real-time, ensuring your workflow remains efficient even with large files.</Callout>
+
+## Key Features
+
+Tracktag.me offers a range of features designed to meet the needs of professional audio creators:
+
+- **Imperceptible Watermarks**: Our advanced algorithms embed watermarks that are inaudible to human listeners but detectable by our verification tools.
+- **Multiple Formats Support**: Compatible with WAV, MP3, AAC, and other popular audio formats.
+- **Batch Processing**: Process entire libraries of tracks simultaneously.
+- **Custom Watermarking**: Embed unique identifiers, timestamps, and metadata.
+- **Cross-Platform**: Available for both Mac and Windows systems.
+
+<Expandable title="System Requirements" default-open="false">
+  Tracktag.me requires a modern computer with at least 4GB RAM and a multi-core processor for optimal performance. Supported operating systems include macOS 10.15+ and Windows 10+.
+  
+  For best results, we recommend using high-quality source audio files (44.1kHz or higher sample rates).
+</Expandable>
+
+## Getting Help
+
+If you encounter any issues or have questions about Tracktag.me, our comprehensive documentation and support resources are here to help. Check out our usage guide for detailed instructions, or explore advanced features for more customization options.
+
+<ExpandableGroup>
+  <Expandable title="Frequently Asked Questions" default-open="false">
+    <Callout kind="tip">Does watermarking affect audio quality?</Callout>
+    No, our watermarking process is designed to be completely transparent. The embedded watermarks are imperceptible and do not alter the listening experience.
+  </Expandable>
+  <Expandable title="How do I verify watermarks?" default-open="false">
+    Use our verification tools to detect and extract watermark information from processed tracks. This helps confirm ownership and track usage.
+  </Expandable>
+</ExpandableGroup>

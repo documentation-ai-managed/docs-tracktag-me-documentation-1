@@ -1,0 +1,150 @@
+---
+title: Usage
+description: How to use Tracktag.me to apply audio watermarks to your tracks
+---
+
+## Using Tracktag.me
+
+Tracktag.me provides an intuitive interface for applying professional audio watermarks to protect your music. This guide walks you through the basic workflow and key features.
+
+<Steps>
+  <Step title="Import Audio Files" icon="upload">
+    Launch Tracktag.me and click the "Import" button to select your audio files. The software supports multiple formats including WAV, MP3, and AAC.
+    
+    <Callout kind="tip">For best results, use high-quality source files with sample rates of 44.1kHz or higher.</Callout>
+  </Step>
+  <Step title="Configure Watermark Settings" icon="settings">
+    Choose your watermark type and enter unique identifiers. Tracktag.me offers various algorithms optimized for different audio characteristics.
+    
+    <Tabs>
+      <Tab title="Basic Watermark" icon="shield">
+        Simple watermarking suitable for most music tracks. Includes basic identification information.
+        
+        <CodeGroup tabs="JavaScript,Python">
+          ````javascript
+          const tracktag = require('tracktag');
+          
+          const options = {
+            type: 'basic',
+            id: 'composer-123',
+            strength: 'medium'
+          };
+          
+          tracktag.process('input.wav', 'output.wav', options);
+          ````
+          ````python
+          import tracktag
+          
+          options = {
+            'type': 'basic',
+            'id': 'composer-123',
+            'strength': 'medium'
+          }
+          
+          tracktag.process('input.wav', 'output.wav', options)
+          ````
+        </CodeGroup>
+      </Tab>
+      <Tab title="Advanced Watermark" icon="zap">
+        For professional applications requiring robust protection. Includes timestamp and metadata embedding.
+        
+        <CodeGroup tabs="JavaScript,Python">
+          ````javascript
+          const tracktag = require('tracktag');
+          
+          const options = {
+            type: 'advanced',
+            id: 'library-456',
+            timestamp: true,
+            metadata: {
+              title: 'Original Score',
+              composer: 'John Doe'
+            }
+          };
+          
+          tracktag.process('input.wav', 'output.wav', options);
+          ````
+          ````python
+          import tracktag
+          
+          options = {
+            'type': 'advanced',
+            'id': 'library-456',
+            'timestamp': True,
+            'metadata': {
+              'title': 'Original Score',
+              'composer': 'John Doe'
+            }
+          }
+          
+          tracktag.process('input.wav', 'output.wav', options)
+          ````
+        </CodeGroup>
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Preview and Process" icon="play">
+    Preview the watermarked audio to ensure quality is maintained, then process the file. The operation typically takes just a few seconds.
+  </Step>
+  <Step title="Export and Verify" icon="download">
+    Save the watermarked file and optionally run verification to confirm the watermark was applied correctly.
+  </Step>
+</Steps>
+
+## Batch Processing
+
+For music libraries or large collections, Tracktag.me supports batch processing to watermark multiple files simultaneously.
+
+<Expandable title="Batch Processing Guide" default-open="false">
+  1. Select multiple files using the file browser or drag-and-drop
+  2. Configure watermark settings that will apply to all files
+  3. Choose output directory and naming convention
+  4. Start the batch process and monitor progress
+  
+  <CodeGroup tabs="JavaScript,Python">
+    ````javascript
+    const tracktag = require('tracktag');
+    
+    const files = ['track1.wav', 'track2.wav', 'track3.wav'];
+    const options = { id: 'batch-789' };
+    
+    tracktag.batchProcess(files, 'output/', options);
+    ````
+    ````python
+    import tracktag
+    
+    files = ['track1.wav', 'track2.wav', 'track3.wav']
+    options = {'id': 'batch-789'}
+    
+    tracktag.batch_process(files, 'output/', options)
+    ````
+  </CodeGroup>
+</Expandable>
+
+## Watermark Verification
+
+Tracktag.me includes tools to verify watermarks in processed audio files.
+
+<Callout kind="info">Verification confirms that watermarks are present and intact, helping you track usage and prove ownership.</Callout>
+
+<ExpandableGroup>
+  <Expandable title="Basic Verification" default-open="false">
+    Use the built-in verifier to check individual files. Simply load the audio and run the verification process.
+  </Expandable>
+  <Expandable title="Advanced Analysis" default-open="false">
+    For detailed analysis, export watermark data including embedded metadata and timestamps.
+  </Expandable>
+</ExpandableGroup>
+
+## Best Practices
+
+To get the most out of Tracktag.me:
+
+- **Test First**: Always process a copy of your original file
+- **Consistent Settings**: Use the same watermark strength across similar tracks
+- **Regular Verification**: Periodically check watermarked files to ensure integrity
+- **Backup Originals**: Keep unmodified versions of your audio files
+
+<Update label="2024-10-10" description="Usage Guide Enhancement" tags={["improvement"]}>
+  Added batch processing examples and verification procedures.
+</Update>
